@@ -1,0 +1,51 @@
+int fordFulkerson( int n, int s, int t )
+{ // ASSUMES: cap[u][v] stores capacity of edge (u,v). cap[u][v] = 0 for no edge.
+// Initialize the flow network so that fnet[u][v] = 0 for all u,v
+int flow = 0; // no flow yet
+while( true ) {
+// Find an augmenting path, using BFS
+for( int i=0; i < n; i++ ) prev[i] = 1;
+queue< int > q;
+prev[s] = 2;
+q.push( s );
+while( !q.empty() && prev[t] == 1
+) {
+int u = q.front();
+q.pop();
+for( int v = 0; v < n; v++ ) {
+if( prev[v] == 1
+) { // not seen yet
+if ( fnet[v][u] || fnet[u][v] < cap[u][v] ) {
+// either a backward edge (v,u) or a forward edge (u,v)
+prev[v] = u;
+q.push( v );
+}
+}
+}
+}
+// See if we couldn't find any path to t (t has no parents)
+if( prev[t] == 1
+) break;
+// Get the bottleneck capacity
+int bot = INT_MAX;
+for( int v = t, u = prev[v]; u >= 0; v = u, u = prev[v] ) {
+if ( fnet[v][u] ) // always use backward edge over forward
+bot = min( bot, fnet[v][u] );
+else // must be a forward edge otherwise
+bot = min( bot, cap[u][v] – fnet[u][v] );
+}
+// update the flow network
+for( int v = t, u = prev[v]; u >= 0; v = u, u = prev[v] ) {
+if ( fnet[v][u] ) // backward edge >
+subtract
+fnet[v][u] =
+bot;
+else // forward edge >
+add
+fnet[u][v] += bot;
+}
+// Sent 'bot' amount of flow from s to t, so update flow
+flow += bot;
+}
+return flow;
+}
