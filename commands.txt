@@ -12,5 +12,10 @@
 	git branch <branch_name>                : makes a new branch
     git checkout <branch_name>              : now changes made will be saved in this branch
 	git branch -d <branch_name>             : deletes the branch label 
-	11) git merge <branch_name1> <branch_name2> : first checkout branch_name1 then merge;this merges b2 into b1 and becomes branch_name1
+11) git merge <branch_name1> <branch_name2> : first checkout branch_name1 then merge;this merges b2 into b1 and becomes branch_name1
 12) git show <commit_id>                    : shows diff between commit and its parent
+13) git remote								: shows all the remotes 
+	git remote add <remote_name> <url>      : makes a remote with remote_name corresponding to url in git-hub
+	git remote -v							: to check remote is added properly
+14) git push <remote_name> <branch_name>    : pushes all changes of that branch to the remote in git-hub
+
