@@ -1,0 +1,16 @@
+1) git diff <commit id> <commit id>         : shows differences bw two commits
+   git diff 								: shows changes that haven't been added to the staging area 
+2) git add <commit id>                      : adds a commit to staging area
+3) git commit                               : commits change
+4) git clone <url>                          : clones the repository identified by the url
+5) git checkout <commit id>                 : goes to the particular commit id
+6) git init                                 : initialises the current working folder as a repository (it has a .git folder)
+7) git log                                  : gives log of all commits (recent ones first)
+8) git status                               : tells which all files are changed since the last commit
+9) git reset --hard                         : discards all changes in staging area or the working space (be careful)
+10) git branch                              : shows the current branches
+	git branch <branch_name>                : makes a new branch
+    git checkout <branch_name>              : now changes made will be saved in this branch
+	git branch -d <branch_name>             : deletes the branch label 
+	11) git merge <branch_name1> <branch_name2> : first checkout branch_name1 then merge;this merges b2 into b1 and becomes branch_name1
+12) git show <commit_id>                    : shows diff between commit and its parent
