@@ -6,7 +6,7 @@ long long *p,*temp;
 	
 //primes between m and n
 
-int primes_below_n(long long n,long long m)
+void primes_below_n(long long n,long long m)
 {
 	
 	for(long long i=0;i<=n-m;)
@@ -40,7 +40,7 @@ int primes_below_n(long long n,long long m)
 	if(*(temp + j)==0)
 	//cout<<j+m<<"\n";
 	if(j+m!=1)
-	printf("%lld\n",j+m);
+	printf("%lld ,",j+m);
 }
 
 
@@ -50,13 +50,14 @@ int main()
 	p=new long long [1000000];
 	temp=p;
 	long long t,m,n;
-	scanf("%lld",&t);
+	//scanf("%lld",&t);
+	t=1;
 	while(t--)
 	{
-		scanf("%lld",&m);
-		scanf("%lld",&n);
-	
-	primes_below_n(n,m);
-	printf("\n");
+		//scanf("%lld",&m);
+		//scanf("%lld",&n);
+	printf("\n{");
+	primes_below_n(7920,2 );
+	printf("\n}");
 }
 }
