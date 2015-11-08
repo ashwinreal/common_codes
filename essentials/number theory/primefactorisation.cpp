@@ -5,7 +5,7 @@
 #include <algorithm>
 
 using namespace std;
-
+long long arr[200000000];
 // minprime computes the minimal prime number that divides i
 long long minprime[10000001]={0};
 
@@ -28,7 +28,7 @@ void minprimefn(long long n)
 	}
 	
 }
-long long primefactor[100000];  //stores prime factorisation 12 = 2 2 3
+long long primefactor[100000];  //stores prime factorisation 12 = 3 2 2 
 long long sz=0;
 void factorise(long long n)
 {

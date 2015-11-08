@@ -13,7 +13,7 @@ long long power(long long x,long long y)
     if (y%2 == 0)
         return (temp*temp)%m;
     else
-        return (x*temp*temp)%m;
+        return (x*((temp*temp)%m))%m;
 }
 
 
